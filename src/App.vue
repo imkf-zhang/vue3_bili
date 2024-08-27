@@ -43,6 +43,7 @@ export default defineComponent({
   },
   computed: {
     doneCount() {
+      console.log('set时进行了触发1')
       return this.todos.filter(item => item.done).length
     },
     totalTodo() {
@@ -50,6 +51,7 @@ export default defineComponent({
     },
     allDone: {
       get() {
+      console.log("set时进行了触发")
        return this.doneCount === this.todos.length
       },
       set(val) {
