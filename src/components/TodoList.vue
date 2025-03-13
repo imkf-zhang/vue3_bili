@@ -5,6 +5,7 @@
     <input
       type="text"
       v-model="val"
+      @keydown.enter="addToDO"
     >
     <button @click="addToDO">add</button>
     <ul>
@@ -57,6 +58,14 @@ export default defineComponent({
       set(val) {
         this.todos.forEach(item => item.done = val)
       }
+    }
+  },
+  watch: {
+    todos: {
+      handler(val) {
+        console.log('c changed', val.length)
+      }
+      // deep: true
     }
   },
   methods: {

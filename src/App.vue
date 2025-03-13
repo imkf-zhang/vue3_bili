@@ -1,10 +1,10 @@
 <template>
   <div>
+    <todo-list> </todo-list>
     <div></div>
     <h1></h1>
   </div>
 </template>
 <script setup>
-//  <todo-list> </todo-list>
-// import TodoList from './components/TodoList.vue'
+import TodoList from './components/TodoList.vue'
 </script>
