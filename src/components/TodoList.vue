@@ -8,6 +8,7 @@
       @keydown.enter="addToDO"
     >
     <button @click="addToDO">add</button>
+    <button @click="clearTodo" v-if="totalTodo">clear</button>
     <ul>
       <li
         v-for="todo in todos"
@@ -21,6 +22,7 @@
       </li>
     </ul>
     <div>{{doneCount+ '/' + totalTodo}}</div>
+    全选
     <input
       type="checkbox"
       v-model="allDone"
@@ -36,7 +38,7 @@ export default defineComponent({
       msg: "vue js",
       count: 1,
       val: "",
-      todos: [
+      todos: localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) :  [
         {title: "吃饭", done: true},
         {title: "睡觉", done: true}
         ]
@@ -50,6 +52,7 @@ export default defineComponent({
     totalTodo() {
       return this.todos.length
     },
+    // 妙呀
     allDone: {
       get() {
       console.log("set时进行了触发")
@@ -64,8 +67,9 @@ export default defineComponent({
     todos: {
       handler(val) {
         console.log('c changed', val.length)
-      }
-      // deep: true
+        localStorage.setItem("todos", JSON.stringify(val))
+      },
+      deep: true
     }
   },
   methods: {
@@ -79,6 +83,10 @@ export default defineComponent({
       }
       this.todos.push({title:this.val,done:false})
       this.val = ""
+    },
+    clearTodo() {
+      // filter 返回一个新的数组，不修改原数组
+      this.todos =  this.todos.filter( item => !item.done)
     }
   },
 })
