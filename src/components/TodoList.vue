@@ -38,6 +38,10 @@ export default defineComponent({
     title: {
       type: String,
       default: '豆子'
+    },
+    itemKey: {
+      type: String,
+      required: true
     }
   },
   data () {
@@ -45,7 +49,7 @@ export default defineComponent({
       msg: "vue js",
       count: 1,
       val: "",
-      todos: localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) :  [
+      todos: localStorage.getItem(this.itemKey ) ? JSON.parse(localStorage.getItem(this.itemKey )) :  [
         {title: "吃饭", done: true},
         {title: "睡觉", done: true}
         ]
@@ -74,7 +78,7 @@ export default defineComponent({
     todos: {
       handler(val) {
         console.log('c changed', val.length)
-        localStorage.setItem("todos", JSON.stringify(val))
+        localStorage.setItem(this.itemKey , JSON.stringify(val))
       },
       deep: true
     }

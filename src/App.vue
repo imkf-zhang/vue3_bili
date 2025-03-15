@@ -1,8 +1,8 @@
 <template>
   <div>
-    <todo-list :title="title1"> </todo-list>
-    <todo-list :title="title2"> </todo-list>
-    <todo-list > </todo-list>
+    <todo-list :title="title1" itemKey="tolist1"> </todo-list>
+    <todo-list :title="title2" itemKey="tolist2"> </todo-list>
+    <todo-list itemKey="tolist3"> </todo-list>
     <div></div>
     <h1></h1>
   </div>
