@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>{{title}}</h2>
     <h1>hi {{msg}}</h1>
     <!-- <div @click="add"> {{count}}</div> -->
     <input
@@ -33,6 +34,12 @@
 <script>
 import { defineComponent } from 'vue'
 export default defineComponent({
+  props: {
+    title: {
+      type: String,
+      default: '豆子'
+    }
+  },
   data () {
     return {
       msg: "vue js",
