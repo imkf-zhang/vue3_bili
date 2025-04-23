@@ -19,3 +19,11 @@ fetch(BASE_URL + '/api/user');
 // npm run lint 命令  
 // const name = "vue3"
 //   warning  'name' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+// 宿主类型
+let w:Window = window;
+// w.open1()
+const ele:HTMLElement = document.createElement('div')
+ele.addEventListener('click', function(e:MouseEvent){
+
+}, false)

@@ -9,6 +9,10 @@ module.exports = {
     '@vue/eslint-config-typescript',
     '@vue/eslint-config-prettier/skip-formatting'
   ],
+  // vue3跟元素可以多个，不要报警告了
+  rules: {
+    'vue/no-multiple-template-root': 'off',
+  },
   parserOptions: {
     ecmaVersion: 'latest'
   }
