@@ -5,8 +5,16 @@ import App from './App.vue'
 import "./main.css"
 // import { ref } from '@vue/reactivity'
 createApp(App).mount('#app')
+
 // console.log('ref', ref)
 
+
+console.log("测试环境，环境变量", import.meta.env.VITE_BASE_URL);
+console.log("测试环境，环境变量1", import.meta.env.VITE_BASE_URL);
+console.log("测试环境，环境变量1", import.meta.env.VITE_BASE_URL);
+console.log("测试环境，环境变量1", import.meta.env.local.BASE_URL);
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+fetch(BASE_URL + '/api/user');
 
 // npm run lint 命令  
 // const name = "vue3"
