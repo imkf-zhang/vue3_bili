@@ -14,13 +14,19 @@
     <todo-list itemKey="tolist3"> </todo-list>
     <div></div>
     <h1>一帆风顺</h1>
+
+    <h2>TS学习</h2>
+    <learn-ts></learn-ts>
   </div>
 </template>
 <script setup>
 import TodoList from './components/TodoList.vue'
 import RateComponents from './components/RateComponents.vue'
+import LearnTs from './components/LearnTs.vue'
 import logo from './assets/logo.svg'
 import logo1 from './assets/logo.svg?raw'
+
+
 console.log('logo', logo)
 console.log('logo1', logo1)
 import {ref} from 'vue';
