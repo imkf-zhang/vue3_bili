@@ -21,9 +21,9 @@ fetch(BASE_URL + '/api/user');
 //   warning  'name' is assigned a value but never used  @typescript-eslint/no-unused-vars
 
 // 宿主类型
-let w:Window = window;
+// const w:Window = window;
 // w.open1()
 const ele:HTMLElement = document.createElement('div')
 ele.addEventListener('click', function(e:MouseEvent){
-
+  console.log('e', e);
 }, false)

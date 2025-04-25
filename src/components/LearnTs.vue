@@ -18,7 +18,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ref, onMounted, reactive, computed } from 'vue'
+import { ref, onMounted } from 'vue'
 
 let count = ref<number>(1)
 let val = ref('')
