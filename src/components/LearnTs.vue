@@ -15,10 +15,26 @@
       {{item.name}}
       {{item.price}}
     </div>
+    <div>{{obj.price}}</div>
   </div>
 </template>
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, reactive, onMounted, defineProps, withDefaults } from 'vue'
+
+interface Propss {
+  title?: string
+  price?: number
+}
+// defineProps({
+//   title: {
+//     type: String,
+//     required: true
+//   }
+// })
+withDefaults(defineProps<Propss>(), {
+  title: '默认标题',
+  price: 100
+})
 
 let count = ref<number>(1)
 let val = ref('')
@@ -29,12 +45,21 @@ interface Course {
   price: number
 }
 let course = ref<Course[]>([{ name: 'z', price: 99 }])
-function add() {
+function add(event: Event) {
+  console.log(event)
   course.value.push({
     name: `vue ${count.value}`,
     price: count.value
   })
+
+  obj.price++
 }
+
+let obj = reactive<Course>({
+  name: 'dou',
+  price: 99
+})
+
 onMounted(() => {
   input.value?.focus()
 })
