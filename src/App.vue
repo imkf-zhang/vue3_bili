@@ -16,13 +16,15 @@
     <h1>一帆风顺</h1>
 
     <h2>TS学习</h2>
-    <learn-ts :title="'好好学习'"></learn-ts>
+    <learn-ts :title="'好好学习'"></learn-ts> -->
+    <my-composition></my-composition>
   </div>
 </template>
 <script setup>
 import TodoList from './components/TodoList.vue'
 import RateComponents from './components/RateComponents.vue'
 import LearnTs from './components/LearnTs.vue'
+import MyComposition from './components/MyComposition.vue'
 import logo from './assets/logo.svg'
 import logo1 from './assets/logo.svg?raw'
 console.log('logo', logo)
