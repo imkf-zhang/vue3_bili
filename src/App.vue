@@ -1,8 +1,11 @@
 <template>
   <div>
-    <img :src="logo" alt="">
+    <img
+      :src="logo"
+      alt=""
+    >
     <div v-html="logo1"></div>
-    zkf
+    <!-- zkf
     <rate-components :value="3" @update="update">
     书的评分
     </rate-components>
@@ -16,11 +19,22 @@
     <h1>一帆风顺</h1>
 
     <h2>TS学习</h2>
-    <learn-ts :title="'好好学习'"></learn-ts> -->
-    <my-composition></my-composition>
+    <learn-ts :title="'好好学习'"></learn-ts>
+    <my-composition></my-composition> -->
+
+    <h1>我的项目</h1>
+
+    <div>
+      <router-link to="/">首页</router-link>
+      <router-link to="/login">登录</router-link>
+      <router-link to="/about">关于</router-link>
+      张卡饭
+    </div>
+    <router-view></router-view>
+    <div>footer</div>
   </div>
 </template>
-<script setup>
+<script setup lang="ts">
 import TodoList from './components/TodoList.vue'
 import RateComponents from './components/RateComponents.vue'
 import LearnTs from './components/LearnTs.vue'
@@ -29,7 +43,7 @@ import logo from './assets/logo.svg'
 import logo1 from './assets/logo.svg?raw'
 console.log('logo', logo)
 console.log('logo1', logo1)
-import {ref} from 'vue';
+import { ref } from 'vue'
 let title1 = ref('kate的代办清单')
 let title2 = ref('凯帆的代办清单')
 function update(res) {
