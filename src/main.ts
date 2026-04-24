@@ -5,11 +5,9 @@ import App from './App.vue'
 import "./main.css"
 // import { ref } from '@vue/reactivity'
 import router from './router'
-import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/reset.css';
 const app = createApp(App)
 app.use(router)
-app.use(Antd)
 app.mount('#app')
 // createApp(App).mount('#app')
 

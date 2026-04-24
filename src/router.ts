@@ -8,7 +8,7 @@ import Video from "./pages/Video.vue";
 const routes = [
   {path: '/', component: Home},
   {path: '/login', component: Login},
-  {path: '/about', component: () => import('./pages/About.vue')},
+  {path: '/about', component: () => import('./pages/AboutPage.vue')},
   {path: '/video/:id', component: Video}
 ]
 
